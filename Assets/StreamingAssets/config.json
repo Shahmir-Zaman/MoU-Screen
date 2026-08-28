@@ -1,0 +1,50 @@
+{
+  "fadeDuration": 0.5,
+  "idleTimeout": 60.0,
+  "maxSessionTimeout": 420.0,
+  "videoFinishedGrace": 10.0,
+  "topicRevealDelay": 2.55,
+  "pointerMoveThreshold": 20.0,
+  "topics": [
+    {
+      "topicName": "1-Numbers",
+      "videoFileNameEN": "TopicVideosEN/1-Numbers-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/1-Numbers-AR.mp4"
+    },
+    {
+      "topicName": "2-Achievements",
+      "videoFileNameEN": "TopicVideosEN/2-Achievements-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/2-Achievements-AR.mp4"
+    },
+    {
+      "topicName": "3-Awards",
+      "videoFileNameEN": "TopicVideosEN/3-Awards-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/3-Awards-AR.mp4"
+    },
+    {
+      "topicName": "4-AIContribution",
+      "videoFileNameEN": "TopicVideosEN/4-AIContribution-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/4-AIContribution-AR.mp4"
+    },
+    {
+      "topicName": "5-Hackathons",
+      "videoFileNameEN": "TopicVideosEN/5-Hackathons-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/5-Hackathons-AR.mp4"
+    },
+    {
+      "topicName": "6-Academy",
+      "videoFileNameEN": "TopicVideosEN/6-Academy-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/6-Academy-AR.mp4"
+    },
+    {
+      "topicName": "7-PastEvents",
+      "videoFileNameEN": "TopicVideosEN/7-PastEvents-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/7-PastEvents-AR.mp4"
+    },
+    {
+      "topicName": "8-ReachOutToUs",
+      "videoFileNameEN": "TopicVideosEN/8-ReachOutToUs-EN.mp4",
+      "videoFileNameAR": "TopicVideosAR/8-ReachOutToUs-AR.mp4"
+    }
+  ]
+}
