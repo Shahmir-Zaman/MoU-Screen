@@ -1,4 +1,6 @@
 {
+  "tuioPort": 3333,
+  "buttonHitAreaPadding": 50.0,
   "fadeDuration": 0.5,
   "idleTimeout": 60.0,
   "maxSessionTimeout": 420.0,

@@ -48,6 +48,8 @@ public class AppFlowManager : MonoBehaviour
     public Button arabicButton;
     [Tooltip("The back button on the Topic Screen to return to the Selection Menu")]
     public Button returnToSelectButton;
+    [Tooltip("The home button on the Select/Topic Screen to return to the Idle Menu")]
+    public Button homeButton;
 
     [Header("Video Players")]
     public VideoPlayer transitionVideoPlayer;
@@ -103,6 +105,11 @@ public class AppFlowManager : MonoBehaviour
         if (returnToSelectButton != null)
         {
             returnToSelectButton.onClick.AddListener(ReturnToSelectScreen);
+        }
+
+        if (homeButton != null)
+        {
+            homeButton.onClick.AddListener(ReturnToIdle);
         }
 
         foreach (TopicData data in topicDatabase)
@@ -223,7 +230,17 @@ public class AppFlowManager : MonoBehaviour
     {
         bool hasInput = false;
 
-        Pointer pointer = Pointer.current;
+        // 1. Check TouchScript (often used for kiosk IR frames)
+        if (TouchScript.TouchManager.Instance != null)
+        {
+            if (TouchScript.TouchManager.Instance.PressedPointersCount > 0)
+            {
+                hasInput = true;
+            }
+        }
+
+        // 2. Fallback to Unity Input System (Pointer & Keyboard)
+        UnityEngine.InputSystem.Pointer pointer = UnityEngine.InputSystem.Pointer.current;
         if (pointer != null)
         {
             Vector2 position = pointer.position.ReadValue();

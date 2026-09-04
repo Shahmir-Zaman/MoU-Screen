@@ -20,6 +20,8 @@ public class AppConfig
     public float videoFinishedGrace = 10f;
     public float topicRevealDelay = 0.3f;
     public float pointerMoveThreshold = 20f;
+    public int tuioPort = 3333;
+    public float buttonHitAreaPadding = 50f;
     public List<TopicConfig> topics = new List<TopicConfig>();
 }
 
@@ -84,6 +86,26 @@ public class AppConfigLoader : MonoBehaviour
         else 
         {
             Debug.LogWarning("[AppConfigLoader] AppFlowManager not found in scene.");
+        }
+
+        var tuioInput = FindObjectOfType<TouchScript.InputSources.TuioInput>();
+        if (tuioInput != null)
+        {
+            tuioInput.TuioPort = cfg.tuioPort;
+        }
+
+        if (cfg.buttonHitAreaPadding > 0)
+        {
+            float p = -cfg.buttonHitAreaPadding;
+            Vector4 padding = new Vector4(p, p, p, p);
+            var buttons = FindObjectsByType<UnityEngine.UI.Button>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            foreach (var btn in buttons)
+            {
+                if (btn.targetGraphic != null)
+                {
+                    btn.targetGraphic.raycastPadding = padding;
+                }
+            }
         }
     }
 }
